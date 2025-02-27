@@ -1,78 +1,130 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
-  final _formKey = GlobalKey<FormState>();
+  const LoginPage({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Scaffold(
-        backgroundColor: Color.fromRGBO(253, 240, 213, 1),
-        appBar: AppBar(
-          backgroundColor: Color.fromRGBO(253, 240, 213, 1),
-          title: Padding(
-            padding: const EdgeInsets.only(left: 0, top: 20),
-            child: Text(
-              "Sakura steam",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold),
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 254, 239, 208),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Color.fromARGB(255, 254, 239, 208),
+        title: Padding(
+          padding: const EdgeInsets.only(top: 20),
+          child: Text(
+            "Sakura stream",
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              fontFamily: GoogleFonts.dmSans().fontFamily,
             ),
           ),
         ),
-        body: Padding(
-          padding: const EdgeInsets.only(left: 20, top: 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("We have something for you"),
-              SizedBox(
-                height: 100,
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 0, left: 20),
+            child: Text(
+              "we have something special for you",
+              style: TextStyle(
+                fontFamily: GoogleFonts.dmSans().fontFamily,
               ),
-              Center(
+            ),
+          ),
+          SizedBox(
+            height: 100,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: SizedBox(
+              width: double.infinity,
+              child: Card(
+                
+                elevation: 10,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                color: Colors.black,
                 child: Column(
                   children: [
-                    SizedBox(
-                      height: 600,
-                      width: 400,
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20)),
-                        color: Colors.black,
-                        shadowColor: Colors.black,
-                        elevation: 10,
-                        child: Column(children: [
-                          Text(
-                            "Create an account",
-                            style: TextStyle(color: Colors.white, fontSize: 30),
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: Card(
+                          elevation: 10,
+                          color: Colors.black,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
                           ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Form(
-                            key: _formKey,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                TextFormField(
-                                  decoration: InputDecoration(
-                                      hintText: "Enter your email",
-                                      hintStyle:
-                                          TextStyle(color: Colors.white)),
-                                )
-                              ],
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: TextFormField(
+                              style: TextStyle(color: Colors.white),
+                              decoration: InputDecoration(
+                                hintText: "Enter you email",
+                                icon: Padding(
+                                  padding: const EdgeInsets.only(left: 5),
+                                  child: Icon(
+                                    Icons.email,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                hintStyle: TextStyle(
+                                  color: Colors.white,
+                                ),
+                                border: InputBorder.none,
+                                contentPadding: EdgeInsets.all(16),
+                              ),
                             ),
                           ),
-                        ]),
+                        ),
                       ),
-                    )
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: Card(
+                          elevation: 10,
+                          color: Colors.black,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: TextFormField(
+                              style: TextStyle(color: Colors.white),
+                              decoration: InputDecoration(
+                                hintText: "Enter you password",
+                                icon: Padding(
+                                  padding: const EdgeInsets.only(left: 5),
+                                  child: Icon(
+                                    Icons.password,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                hintStyle: TextStyle(
+                                  color: Colors.white,
+                                ),
+                                border: InputBorder.none,
+                                contentPadding: EdgeInsets.all(16),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
-              )
-            ],
-          ),
-        ),
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
