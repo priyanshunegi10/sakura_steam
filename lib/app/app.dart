@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sakura_steam/pages/login_page.dart';
+import 'package:sakura_steam/pages/home_page.dart';
+// import 'package:sakura_steam/pages/login_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.light(
         useMaterial3: true,
       ),
-      home: LoginPage(),
+      home: HomePage(),
     );
   }
 }
